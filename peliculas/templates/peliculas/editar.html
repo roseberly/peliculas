@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% block titulo %} Actualizar Pelicula {% endblock %} 
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header bg-danger">
+        <h4 class="card-title text-primary">Añade tu película</h4>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title text-primary">Datos de la pelicula</h4>
+        
+        {% include "peliculas/form.html" %}
+
+
+    </div>
+    <div class="card-footer text-muted">
+        <div class="card-footer bg-danger">
+        
+    </div>
+</div>
+
+
+{%endblock%}

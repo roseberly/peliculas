@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+
+{% block titulo %}Inicio{% endblock %} 
+
+{% block contenido %} 
+
+<div class="card">
+  <div class="card-header bg-danger">
+    <h1 class="text-primary">Bienvenidos a Mundo PelKids<h1> 
+    
+    {% if user.is_authenticated %}
+    <p class="text-center">Hola {{ user.username }}!</p> 
+    {% else %}
+    <p class="text-center">Hola, anonimo!</p>
+    {% endif %}
+    
+  <div class="card-body">
+    <h4 class="card-title text-primary">Descubre las últimas películas que harán que tus ojos se iluminen.</h4>
+    <p class="card-text text-info">Ya sea que tengas 3 años o 103, tenemos películas adecuadas para ti y aprende mientras te diviertes con películas que estimulan la mente y la imaginación.<br><br>¡Únete a nosotros mientras exploramos el maravilloso mundo del cine infantil! Prepárate para reír, aprender y crear recuerdos mágicos en familia. ¡Comencemos esta emocionante aventura juntos!
+
+      
+      
+      
+      
+      
+      
+      </p>
+    <a href="" class="btn btn-outline-danger"><b>Buscar Película</b></a>
+  </div>
+  <div class="card-footer text-muted">
+    
+  </div>
+</div>
+
+{% endblock %}

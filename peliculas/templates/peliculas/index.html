@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+
+{% block titulo %}Peliculas{% endblock %} 
+
+{% block contenido %} 
+
+<div class="card">
+  <div class="card-header bg-danger">
+    <a name="" id="" class="btn btn-outline-warning" href="{% url "crear" %}" role="button">Agregar nueva película</a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title text-primary">Acá encontrarás tus películas favoritas</h4>
+
+    <div class="table-responsive">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for pelicula in peliculas %} 
+                <tr class="">
+                    <td scope="row">{{pelicula.id}}</td>
+                    <td>{{pelicula.titulo}}</td>
+                    <td>
+                        <img src="{{ pelicula.imagen.url }}" alt="" width="100px"> 
+                    </td>
+                    <td>{{pelicula.descripcion}}</td>
+                    <td><a name=""id=""class="btn btn-outline-danger" href="{% url 'editar' pelicula.id %}"role="button">Editar</a><br>
+                      <br><br>
+                      <a name="" id="" class="btn btn-outline-warning"  href="{% url 'eliminar' pelicula.id %}"role="button">Eliminar</a>
+                        
+              
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+{% endblock %}
